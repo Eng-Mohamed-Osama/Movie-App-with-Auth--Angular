@@ -9,14 +9,14 @@ import { SharedDataService } from '../shared-data.service';
 })
 export class NavbarComponent implements OnInit {
   navbarLogo:any;
-  userlist:Array<any>;
+  userlist:any;
 
-  constructor(private logo:SharedDataService) {
+  constructor(private logo:SharedDataService , private userservice:UsersService) {
    this.logo.projectName.subscribe(data => this.navbarLogo = data);
    }
 
   ngOnInit(): void {
-    this.UsersService.getUser(1).subscribe((data)=>{this.userlist = data})
+    this.userservice.getUser(1).subscribe((data)=>{this.userlist = data})
   }
 
 }
