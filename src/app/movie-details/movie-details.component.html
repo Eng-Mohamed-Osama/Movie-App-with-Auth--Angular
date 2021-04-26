@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="card ">
+      <div class="card-body d-flex">
+        <img [src]="ImgSrc" class="card-img-top d-block col-lg-4" alt="movie img">
+        <div class="col-lg-8">
+          <h5 class="card-title">{{title}}</h5>
+          <h5 class="card-title">{{lang | language}}</h5>
+          <p class="card-text">{{dtails}}</p>
+          <h6>
+            Rating
+          </h6>
+          <star-rating [value]="rating" totalstars="10" checkedcolor="gold" uncheckedcolor="black" size="24px"
+            readonly="false" ></star-rating>
+          <h6>Will be Released In {{releaseDate | date : 'MMMM YYYY'}}</h6>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
